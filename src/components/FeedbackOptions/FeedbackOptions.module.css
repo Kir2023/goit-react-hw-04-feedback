@@ -1,0 +1,30 @@
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+.btnContainer :nth-child(1) {
+  background-color: green;
+}
+.btnContainer :nth-child(2) {
+  background-color: yellow;
+}
+.btnContainer :nth-child(3) {
+  background-color: red;
+}
+
+.feedbackBtn {
+  border-radius: 10px;
+  align-items: center;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  height: 48px;
+  justify-content: center;
+  min-width: 140px;
+  padding: 0 17px;
+  margin-right: 16px;
+}
