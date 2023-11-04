@@ -9,13 +9,19 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const handleFeedback = e => {
-    if (e === 'Good') {
-      setGood(good + 1);
-    } else if (e === 'Neutral') {
-      setNeutral(neutral + 1);
-    } else if (e === 'Bad') {
-      setBad(bad + 1);
+  const handleFeedback = option => {
+    switch (option) {
+      case 'good':
+        setGood(prevGood => prevGood + 1);
+        break;
+      case 'neutral':
+        setNeutral(prevNeutral => prevNeutral + 1);
+        break;
+      case 'bad':
+        setBad(prevBad => prevBad + 1);
+        break;
+      default:
+        return;
     }
   };
 
@@ -45,7 +51,7 @@ export const App = () => {
     >
       <Section title="Please leave feedback">
         <FeedbackOptions
-          options={['Good', 'Neutral', 'Bad']}
+          options={Object.keys({ good, neutral, bad })}
           onLeaveFeedback={handleFeedback}
         />{' '}
       </Section>
